@@ -29,12 +29,22 @@ cpdef object create_remote_qpu(str host):
     except Exception:
         return None
 
-
+## a tiny helper function in Cython
+## it is introduced for the function submit_noisy_job()
 @cython.cfunc
 @cython.inline
 cdef bint _is_bad(double x) nogil:
     return x <= 0 or isnan(x)
 
+"""
+ submit_noisy_job() sends a quantum circuit (written in the language QASM) to a Flask-based backend over HTTP, tells the backend
+to simulate it with noise (t1,t2 parameters), and returns the resulting probability distribution of quantum states.
+"""
+## host: URL of the Flask backend
+## qasm_string: the OpenQASM code for the quantum circuit
+## nshots: how many times to run the circuit (Monte Carlo sampling)
+## t1, t2: noise parameters (relation time and decoherence time)
+## QASM: Quantum Assembly Language
 cpdef object submit_noisy_job(str host, str qasm_string, int nshots, double t1=40000, double t2=22000):
     """
     Submit a noisy job via HTTP to a Flask backend.
@@ -57,6 +67,7 @@ cpdef object submit_noisy_job(str host, str qasm_string, int nshots, double t1=4
     if _is_bad(t1) or _is_bad(t2):
         raise ValueError("t1 and t2 must be positive floats")
 
+    # Preparing the payload (a dictonary that will be converted to JSON)
     payload = {
         "aqasm": qasm_string,
         "t1": t1,
@@ -64,6 +75,7 @@ cpdef object submit_noisy_job(str host, str qasm_string, int nshots, double t1=4
         "nbshots": nshots,
     }
 
+    # This sends the job to the given Flask endpoint using HTTP POST.
     try:
         import requests
         resp = requests.post(host, json=payload, timeout=10)
