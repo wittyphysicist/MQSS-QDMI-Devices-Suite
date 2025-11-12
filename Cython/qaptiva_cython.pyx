@@ -31,8 +31,6 @@ cpdef object create_remote_qpu(str host):
 
 ## a tiny helper function in Cython
 ## it is introduced for the function submit_noisy_job()
-@cython.cfunc
-@cython.inline
 cdef bint _is_bad(double x) nogil:
     return x <= 0 or isnan(x)
 
