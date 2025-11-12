@@ -104,24 +104,24 @@ cpdef object submit_noisy_job(str host, str qasm_string, int nshots, double t1=4
         print("HTTP submit error:",e)
         raise
 
-
+        
 cpdef object submit_job(object remote_qpu, str qasm_string, int nshots):
     """
-    Returns ["state1,state2,...", p1, p2, ...] or None on failure.
+     The function submits a quantum circuit to a remote QPU and collects the results.
     """
     cdef list states = []
     cdef list probs = []
     try:
-        from qat.interop.openqasm import OqasmParser
-        parser = OqasmParser()
-        circuit = parser.compile(qasm_string)
-        job = circuit.to_job(nbshots=nshots)
-        raw_results = remote_qpu.submit(job)
+        from qat.interop.openqasm import OqasmParser # imports 0qasmParser from the qat (myQLM) library
+        parser = OqasmParser() # converts a QASM string into an executable form
+        circuit = parser.compile(qasm_string) # turns the textual QASM into an internal circuit rep.
+        job = circuit.to_job(nbshots=nshots) # creates a job defining how many times the circuit will be executed
+        raw_results = remote_qpu.submit(job) # performs the quantum computation
 
         for r in raw_results:
-            states.append(r.state.bitstring)
-            probs.append(float(r.probability))
+            states.append(r.state.bitstring) # gives the measured quantum state like "0101"
+            probs.append(float(r.probability)) # gives the probability
 
-        return [",".join(states)] + probs
+        return [",".join(states)] + probs # returns the results
     except Exception:
         return None
