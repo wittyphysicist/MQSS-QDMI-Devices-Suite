@@ -22,13 +22,13 @@ cpdef object create_remote_qpu(str host):
     -------
     object or None
     """
-    cdef str url
-    cdef str port
+    cdef str u
+    cdef str p
     try:
         from qat.core.qpu import RemoteQPU
         if ":" in host:
-            url, port = host.split(":", 1)
-            return RemoteQPU(host=h, port=int(p))
+            u, p = host.split(":", 1)
+            return RemoteQPU(host=u, port=int(p))
         else:
             # default port, if your stack expects one; adjust if needed
             return RemoteQPU(host=host)
