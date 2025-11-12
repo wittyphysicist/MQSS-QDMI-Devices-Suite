@@ -3,57 +3,50 @@
 from libc.math cimport isnan
 cimport cython
 
+
+
 cpdef object create_remote_qpu(str host):
     """
-    Creates a remote QPU connection.
+    Establishes a connection to a remote quantum processing unit (QPU) using myQLM's RemoteQPU interface.
 
-    Parameters
-    ----------
-    host : str
-        "host:port"
+    For instance if the user provides something like "localhost:8080" then the function splits into host and
+    port in the following way:
+    u = "localhost"
+    p = "8080"
 
-    Returns
-    -------
-    object or None
-    """
+    then RemoteQPU(host=u, port=int(p)) creates an object that acts as a proxy. If anything fails, it returns
+    'None'
+"""
     cdef str u
     cdef str p
     try:
         from qat.core.qpu import RemoteQPU
         if ":" in host:
             u, p = host.split(":", 1)
-            return RemoteQPU(host=u, port=int(p))
+            return RemoteQPU(host=u, port=int(p)) # myQLM's "RemoteQPU" expects "host=..., port=...".
         else:
             # default port, if your stack expects one; adjust if needed
             return RemoteQPU(host=host)
     except Exception:
         return None
 
-## a tiny helper function in Cython
-## it is introduced for the function submit_noisy_job()
+
 cdef bint _is_bad(double x) nogil:
+    """
+    a tiny helper function in Cython
+    introduced for the function submit_noisy_job()
+    """
     return x <= 0 or isnan(x)
 
-"""
- submit_noisy_job() sends a quantum circuit (written in the language QASM) to a Flask-based backend over HTTP, tells the backend
-to simulate it with noise (t1,t2 parameters), and returns the resulting probability distribution of quantum states.
-"""
-## host: URL of the Flask backend
-## qasm_string: the OpenQASM code for the quantum circuit
-## nshots: how many times to run the circuit (Monte Carlo sampling)
-## t1, t2: noise parameters (relation time and decoherence time)
-## QASM: Quantum Assembly Language
 cpdef object submit_noisy_job(str host, str qasm_string, int nshots, double t1=40000, double t2=22000):
     """
-    Submit a noisy job via HTTP to a Flask backend.
+    sends a quantum circuit (written in the language QASM) to a Flask-based backend over HTTP, tells the backend
+    to simulate it with noise (t1,t2 parameters), and returns the resulting probability distribution of quantum states.
 
-    Returns:
-        ["state1,state2,...", p1, p2, ...] on success
-        None on handled HTTP errors
-
-    Raises:
-        ValueError on invalid inputs
-        requests.RequestException on network errors (after printing message)
+    * qasm_string: the OpenQASM code for the quantum circuit
+    * nshots: how many times to run the circuit (Monte Carlo sampling)
+    * t1, t2: noise parameters (relation time and decoherence time)
+    * QASM: Quantum Assembly Language
     """
     cdef dict payload
     cdef object requests, resp, data, result, probs
