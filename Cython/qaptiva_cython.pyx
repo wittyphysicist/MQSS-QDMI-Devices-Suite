@@ -9,7 +9,6 @@ cdef bint _is_bad(double x) nogil:
     return x <= 0 or isnan(x)
 
 
-
 cpdef object create_remote_qpu(str host):
     """
     Creates a remote QPU connection.
@@ -23,12 +22,12 @@ cpdef object create_remote_qpu(str host):
     -------
     object or None
     """
-    cdef str h
-    cdef str p
+    cdef str url
+    cdef str port
     try:
         from qat.core.qpu import RemoteQPU
         if ":" in host:
-            h, p = host.split(":", 1)
+            url, port = host.split(":", 1)
             return RemoteQPU(host=h, port=int(p))
         else:
             # default port, if your stack expects one; adjust if needed
