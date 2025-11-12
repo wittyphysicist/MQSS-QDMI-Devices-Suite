@@ -36,30 +36,6 @@ cpdef object create_remote_qpu(str host):
         return None
 
 
-
-cpdef object submit_job(object remote_qpu, str qasm_string, int nshots):
-    """
-    Returns ["state1,state2,...", p1, p2, ...] or None on failure.
-    """
-    cdef list states = []
-    cdef list probs = []
-    try:
-        from qat.interop.openqasm import OqasmParser
-        parser = OqasmParser()
-        circuit = parser.compile(qasm_string)
-        job = circuit.to_job(nbshots=nshots)
-        raw_results = remote_qpu.submit(job)
-
-        for r in raw_results:
-            states.append(r.state.bitstring)
-            probs.append(float(r.probability))
-
-        return [",".join(states)] + probs
-    except Exception:
-        return None
-
-
-    
 cpdef object submit_noisy_job(str host, str qasm_string, int nshots,
                               double t1=40000, double t2=22000):
     """
@@ -88,5 +64,27 @@ cpdef object submit_noisy_job(str host, str qasm_string, int nshots,
         cdef list states = sorted(probs.keys())
         cdef list probabilities = [float(probs[s]) for s in states]
         return [",".join(states)] + probabilities
+    except Exception:
+        return None
+
+
+cpdef object submit_job(object remote_qpu, str qasm_string, int nshots):
+    """
+    Returns ["state1,state2,...", p1, p2, ...] or None on failure.
+    """
+    cdef list states = []
+    cdef list probs = []
+    try:
+        from qat.interop.openqasm import OqasmParser
+        parser = OqasmParser()
+        circuit = parser.compile(qasm_string)
+        job = circuit.to_job(nbshots=nshots)
+        raw_results = remote_qpu.submit(job)
+
+        for r in raw_results:
+            states.append(r.state.bitstring)
+            probs.append(float(r.probability))
+
+        return [",".join(states)] + probs
     except Exception:
         return None
