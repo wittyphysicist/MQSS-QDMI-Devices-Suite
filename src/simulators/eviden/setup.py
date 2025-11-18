@@ -4,19 +4,18 @@ from setuptools import setup, Extension
 from Cython.Build import cythonize
 import os
 
-# Path to the .pyx file inside the repo
+from setuptools import setup, Extension
+from Cython.Build import cythonize
+
 ext_modules = [
-   Extension(
-       "simulators.eviden.qaptiva",
-       sources=["src/simulators/eviden/qaptiva.pyx"],
-   )
+    Extension(
+        "qaptiva",
+        ["qaptiva.pyx", "qaptiva_qdmi/device.c"],
+        include_dirs=["."],
+    )
 ]
 
 setup(
-   name="qaptiva",
-   ext_modules=cythonize(
-       ext_modules,
-       compiler_directives={"language_level": "3"}
-   ),
-   zip_safe=False,
+    name="qaptiva",
+    ext_modules=cythonize(ext_modules),
 )
