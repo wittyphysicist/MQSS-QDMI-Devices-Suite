@@ -1,41 +1,28 @@
-// main.c
 #include <stdio.h>
 #include <dlfcn.h>
 
-// C function type matching the cdef public in qaptiva.pyx
-typedef int (*qaptiva_self_test_fn)(void);
+typedef int (*testfunc_t)(int, int);
 
-int main(void)
-{
-   void *handle = NULL;
-   qaptiva_self_test_fn self_test = NULL;
-   char *err = NULL;
+int main() {
+    void* handle = dlopen("./qaptiva.so", RTLD_LAZY | RTLD_GLOBAL);
+    if (!handle) {
+        fprintf(stderr, "dlopen error: %s\n", dlerror());
+        return 1;
+    }
 
-   // 1. Load the Cython-built shared library.
-   //    Adjust this path/name to whatever file `setup.py build_ext --inplace`
-   //    produces (e.g. qaptiva.cpython-311-x86_64-linux-gnu.so).
-   handle = dlopen("./qaptiva.cpython-311-x86_64-linux-gnu.so", RTLD_NOW);
-   if (!handle) {
-       fprintf(stderr, "dlopen failed: %s\n", dlerror());
-       return 1;
-   }
+    dlerror(); // clear errors
 
-   // 2. Clear any old error
-   dlerror();
+    testfunc_t cy_test_add = (testfunc_t) dlsym(handle, "cy_test_add");
+    char* err = dlerror();
+    if (err) {
+        fprintf(stderr, "dlsym error: %s\n", err);
+        return 1;
+    }
 
-   // 3. Resolve the symbol exported by Cython
-   self_test = (qaptiva_self_test_fn)dlsym(handle, "qaptiva_self_test");
-   if ((err = dlerror()) != NULL) {
-       fprintf(stderr, "dlsym failed: %s\n", err);
-       dlclose(handle);
-       return 1;
-   }
+    int result = cy_test_add(3, 4);
+    printf("cy_test_add(3,4) = %d\n", result);
 
-   // 4. Call the function
-   int rc = self_test();
-   printf("qaptiva_self_test() returned %d\n", rc);
-
-   // 5. Clean up
-   dlclose(handle);
-   return 0;
+    dlclose(handle);
+    return 0;
 }
+

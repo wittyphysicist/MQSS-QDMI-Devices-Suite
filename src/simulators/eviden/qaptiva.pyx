@@ -1,14 +1,4 @@
-from libc.stdlib cimport malloc, free
-
 from libc.math cimport isnan
-
-cdef extern int QAPTIVA_QDMI_device_initialize():
-    print("Device initialized (Cython backend)")
-    return 0  # QDMI_SUCCESS
-
-cdef extern int QAPTIVA_QDMI_device_finalize():
-    print("Device finalized (Cython backend)")
-    return 0
 
 
 cpdef object create_remote_qpu(str host):
@@ -124,3 +114,11 @@ cpdef object submit_job(object remote_qpu, str qasm_string, int nshots):
         return [",".join(states)] + probs # returns the results
     except Exception:
         return None
+
+
+## C-test function
+cdef public int cy_test_add(int a, int b):
+    """
+    Simple public F function exported dl/open/dlsym tests.
+    """
+    return a+b
