@@ -4,12 +4,12 @@
 {
     "distutils": {
         "depends": [],
-        "name": "simulators.eviden.qaptiva",
+        "name": "qaptiva",
         "sources": [
-            "/workspaces/MQSS-QDMI-Devices-Suite/src/simulators/eviden/qaptiva.pyx"
+            "qaptiva.pyx"
         ]
     },
-    "module_name": "simulators.eviden.qaptiva"
+    "module_name": "qaptiva"
 }
 END: Cython Metadata */
 
@@ -1136,9 +1136,10 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__simulators__eviden__qaptiva
-#define __PYX_HAVE_API__simulators__eviden__qaptiva
+#define __PYX_HAVE__qaptiva
+#define __PYX_HAVE_API__qaptiva
 /* Early includes */
+#include "qaptiva_qdmi/device.h"
 #include <string.h>
 #include <stdlib.h>
 #include <math.h>
@@ -1517,16 +1518,16 @@ static const char* const __pyx_f[] = {
 /* #### Code section: type_declarations ### */
 
 /*--- Type declarations ---*/
-struct __pyx_opt_args_10simulators_6eviden_7qaptiva_submit_noisy_job;
+struct __pyx_opt_args_7qaptiva_submit_noisy_job;
 
-/* "simulators/eviden/qaptiva.pyx":47
+/* "qaptiva.pyx":47
  *     return x <= 0 or isnan(x)
  * 
  * cpdef object submit_noisy_job(str host, str qasm_string, int nshots, double t1=40000, double t2=22000):             # <<<<<<<<<<<<<<
  *     """
  *     sends a quantum circuit (written in the language QASM) to a Flask-based backend over HTTP, tells the backend
 */
-struct __pyx_opt_args_10simulators_6eviden_7qaptiva_submit_noisy_job {
+struct __pyx_opt_args_7qaptiva_submit_noisy_job {
   int __pyx_n;
   double t1;
   double t2;
@@ -2493,18 +2494,19 @@ static int __Pyx_State_RemoveModule(void*);
 
 /* Module declarations from "libc.math" */
 
-/* Module declarations from "simulators.eviden.qaptiva" */
-static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_create_remote_qpu(PyObject *, int __pyx_skip_dispatch); /*proto*/
-static int __pyx_f_10simulators_6eviden_7qaptiva__is_bad(double); /*proto*/
-static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject *, PyObject *, int, int __pyx_skip_dispatch, struct __pyx_opt_args_10simulators_6eviden_7qaptiva_submit_noisy_job *__pyx_optional_args); /*proto*/
-static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_job(PyObject *, PyObject *, int, int __pyx_skip_dispatch); /*proto*/
+/* Module declarations from "qaptiva" */
+static PyObject *__pyx_f_7qaptiva_create_remote_qpu(PyObject *, int __pyx_skip_dispatch); /*proto*/
+static int __pyx_f_7qaptiva__is_bad(double); /*proto*/
+static PyObject *__pyx_f_7qaptiva_submit_noisy_job(PyObject *, PyObject *, int, int __pyx_skip_dispatch, struct __pyx_opt_args_7qaptiva_submit_noisy_job *__pyx_optional_args); /*proto*/
+static PyObject *__pyx_f_7qaptiva_submit_job(PyObject *, PyObject *, int, int __pyx_skip_dispatch); /*proto*/
+__PYX_EXTERN_C int cy_test_add(int, int); /*proto*/
 /* #### Code section: typeinfo ### */
 /* #### Code section: before_global_var ### */
-#define __Pyx_MODULE_NAME "simulators.eviden.qaptiva"
-extern int __pyx_module_is_main_simulators__eviden__qaptiva;
-int __pyx_module_is_main_simulators__eviden__qaptiva = 0;
+#define __Pyx_MODULE_NAME "qaptiva"
+extern int __pyx_module_is_main_qaptiva;
+int __pyx_module_is_main_qaptiva = 0;
 
-/* Implementation of "simulators.eviden.qaptiva" */
+/* Implementation of "qaptiva" */
 /* #### Code section: global_var ### */
 static PyObject *__pyx_builtin_print;
 static PyObject *__pyx_builtin_ValueError;
@@ -2538,6 +2540,7 @@ static const char __pyx_k_submit[] = "submit";
 static const char __pyx_k_to_job[] = "to_job";
 static const char __pyx_k_compile[] = "compile";
 static const char __pyx_k_nbshots[] = "nbshots";
+static const char __pyx_k_qaptiva[] = "qaptiva";
 static const char __pyx_k_timeout[] = "timeout";
 static const char __pyx_k_add_note[] = "add_note";
 static const char __pyx_k_qualname[] = "__qualname__";
@@ -2566,7 +2569,6 @@ static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_state_probabilities[] = "state_probabilities";
 static const char __pyx_k_qat_interop_openqasm[] = "qat.interop.openqasm";
 static const char __pyx_k_4s_t4vQe1_9AU_U_Qa_9AU_q[] = "\200\001\360\034\000\005\006\330\010\r\320\r!\240\021\330\010\013\2104\210s\220!\330\014\017\210t\2204\220v\230Q\230e\2401\330\014\023\2209\230A\230U\240#\240U\250#\250Q\250a\360\006\000\r\024\2209\230A\230U\240!\330\013\014\330\010\017\210q";
-static const char __pyx_k_simulators_eviden_qaptiva[] = "simulators.eviden.qaptiva";
 static const char __pyx_k_q_a_A_gWAXQ_j_q_E_6_aq_q_5_A_q[] = "\200\001\360\010\000\005\030\220q\330\004\026\220a\330\004\005\330\010\r\320\r)\250\021\330\010\021\220\033\230A\330\010\022\220&\230\010\240\001\240\021\330\010\016\210g\220W\230A\230X\240Q\330\010\026\220j\240\007\240q\250\001\340\010\014\210E\220\021\330\014\022\220'\230\021\230!\2306\240\021\330\014\021\220\027\230\001\230\025\230a\230q\240\001\340\010\017\210q\220\003\2205\230\001\230\031\240\"\240A\330\013\014\330\010\017\210q";
 static const char __pyx_k_Device_finalized_Cython_backend[] = "Device finalized (Cython backend)";
 static const char __pyx_k_Malformed_server_response_state[] = "Malformed server response: 'state_probabilities' must be a dict";
@@ -2576,9 +2578,9 @@ static const char __pyx_k_Note_that_Cython_is_deliberately[] = "Note that Cython
 static const char __pyx_k_nshots_must_be_a_positive_intege[] = "nshots must be a positive integer";
 static const char __pyx_k_t1_and_t2_must_be_positive_float[] = "t1 and t2 must be positive floats";
 /* #### Code section: decls ### */
-static PyObject *__pyx_pf_10simulators_6eviden_7qaptiva_create_remote_qpu(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_host); /* proto */
-static PyObject *__pyx_pf_10simulators_6eviden_7qaptiva_2submit_noisy_job(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_host, PyObject *__pyx_v_qasm_string, int __pyx_v_nshots, double __pyx_v_t1, double __pyx_v_t2); /* proto */
-static PyObject *__pyx_pf_10simulators_6eviden_7qaptiva_4submit_job(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_remote_qpu, PyObject *__pyx_v_qasm_string, int __pyx_v_nshots); /* proto */
+static PyObject *__pyx_pf_7qaptiva_create_remote_qpu(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_host); /* proto */
+static PyObject *__pyx_pf_7qaptiva_2submit_noisy_job(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_host, PyObject *__pyx_v_qasm_string, int __pyx_v_nshots, double __pyx_v_t1, double __pyx_v_t2); /* proto */
+static PyObject *__pyx_pf_7qaptiva_4submit_job(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_remote_qpu, PyObject *__pyx_v_qasm_string, int __pyx_v_nshots); /* proto */
 /* #### Code section: late_includes ### */
 /* #### Code section: module_state ### */
 /* SmallCodeConfig */
@@ -2701,16 +2703,16 @@ static __pyx_mstatetype * const __pyx_mstate_global = &__pyx_mstate_global_stati
 #define __pyx_n_u_post __pyx_string_tab[36]
 #define __pyx_n_u_print __pyx_string_tab[37]
 #define __pyx_n_u_probability __pyx_string_tab[38]
-#define __pyx_kp_u_qaptiva_pyx __pyx_string_tab[39]
-#define __pyx_n_u_qasm_string __pyx_string_tab[40]
-#define __pyx_n_u_qat_core_qpu __pyx_string_tab[41]
-#define __pyx_n_u_qat_interop_openqasm __pyx_string_tab[42]
-#define __pyx_n_u_qualname __pyx_string_tab[43]
-#define __pyx_n_u_remote_qpu __pyx_string_tab[44]
-#define __pyx_n_u_requests __pyx_string_tab[45]
-#define __pyx_n_u_result __pyx_string_tab[46]
-#define __pyx_n_u_set_name __pyx_string_tab[47]
-#define __pyx_n_u_simulators_eviden_qaptiva __pyx_string_tab[48]
+#define __pyx_n_u_qaptiva __pyx_string_tab[39]
+#define __pyx_kp_u_qaptiva_pyx __pyx_string_tab[40]
+#define __pyx_n_u_qasm_string __pyx_string_tab[41]
+#define __pyx_n_u_qat_core_qpu __pyx_string_tab[42]
+#define __pyx_n_u_qat_interop_openqasm __pyx_string_tab[43]
+#define __pyx_n_u_qualname __pyx_string_tab[44]
+#define __pyx_n_u_remote_qpu __pyx_string_tab[45]
+#define __pyx_n_u_requests __pyx_string_tab[46]
+#define __pyx_n_u_result __pyx_string_tab[47]
+#define __pyx_n_u_set_name __pyx_string_tab[48]
 #define __pyx_n_u_spec __pyx_string_tab[49]
 #define __pyx_n_u_state __pyx_string_tab[50]
 #define __pyx_n_u_state_probabilities __pyx_string_tab[51]
@@ -2784,7 +2786,7 @@ static CYTHON_SMALL_CODE int __pyx_m_traverse(PyObject *m, visitproc visit, void
 #endif
 /* #### Code section: module_code ### */
 
-/* "simulators/eviden/qaptiva.pyx":5
+/* "qaptiva.pyx":5
  * from libc.math cimport isnan
  * 
  * cdef extern int QAPTIVA_QDMI_device_initialize():             # <<<<<<<<<<<<<<
@@ -2804,7 +2806,7 @@ int QAPTIVA_QDMI_device_initialize(void) {
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("QAPTIVA_QDMI_device_initialize", 0);
 
-  /* "simulators/eviden/qaptiva.pyx":6
+  /* "qaptiva.pyx":6
  * 
  * cdef extern int QAPTIVA_QDMI_device_initialize():
  *     print("Device initialized (Cython backend)")             # <<<<<<<<<<<<<<
@@ -2825,7 +2827,7 @@ int QAPTIVA_QDMI_device_initialize(void) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "simulators/eviden/qaptiva.pyx":7
+  /* "qaptiva.pyx":7
  * cdef extern int QAPTIVA_QDMI_device_initialize():
  *     print("Device initialized (Cython backend)")
  *     return 0  # QDMI_SUCCESS             # <<<<<<<<<<<<<<
@@ -2835,7 +2837,7 @@ int QAPTIVA_QDMI_device_initialize(void) {
   __pyx_r = 0;
   goto __pyx_L0;
 
-  /* "simulators/eviden/qaptiva.pyx":5
+  /* "qaptiva.pyx":5
  * from libc.math cimport isnan
  * 
  * cdef extern int QAPTIVA_QDMI_device_initialize():             # <<<<<<<<<<<<<<
@@ -2848,14 +2850,14 @@ int QAPTIVA_QDMI_device_initialize(void) {
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_WriteUnraisable("simulators.eviden.qaptiva.QAPTIVA_QDMI_device_initialize", __pyx_clineno, __pyx_lineno, __pyx_filename, 1, 0);
+  __Pyx_WriteUnraisable("qaptiva.QAPTIVA_QDMI_device_initialize", __pyx_clineno, __pyx_lineno, __pyx_filename, 1, 0);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "simulators/eviden/qaptiva.pyx":9
+/* "qaptiva.pyx":9
  *     return 0  # QDMI_SUCCESS
  * 
  * cdef extern int QAPTIVA_QDMI_device_finalize():             # <<<<<<<<<<<<<<
@@ -2875,7 +2877,7 @@ int QAPTIVA_QDMI_device_finalize(void) {
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("QAPTIVA_QDMI_device_finalize", 0);
 
-  /* "simulators/eviden/qaptiva.pyx":10
+  /* "qaptiva.pyx":10
  * 
  * cdef extern int QAPTIVA_QDMI_device_finalize():
  *     print("Device finalized (Cython backend)")             # <<<<<<<<<<<<<<
@@ -2896,7 +2898,7 @@ int QAPTIVA_QDMI_device_finalize(void) {
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "simulators/eviden/qaptiva.pyx":11
+  /* "qaptiva.pyx":11
  * cdef extern int QAPTIVA_QDMI_device_finalize():
  *     print("Device finalized (Cython backend)")
  *     return 0             # <<<<<<<<<<<<<<
@@ -2906,7 +2908,7 @@ int QAPTIVA_QDMI_device_finalize(void) {
   __pyx_r = 0;
   goto __pyx_L0;
 
-  /* "simulators/eviden/qaptiva.pyx":9
+  /* "qaptiva.pyx":9
  *     return 0  # QDMI_SUCCESS
  * 
  * cdef extern int QAPTIVA_QDMI_device_finalize():             # <<<<<<<<<<<<<<
@@ -2919,14 +2921,14 @@ int QAPTIVA_QDMI_device_finalize(void) {
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_WriteUnraisable("simulators.eviden.qaptiva.QAPTIVA_QDMI_device_finalize", __pyx_clineno, __pyx_lineno, __pyx_filename, 1, 0);
+  __Pyx_WriteUnraisable("qaptiva.QAPTIVA_QDMI_device_finalize", __pyx_clineno, __pyx_lineno, __pyx_filename, 1, 0);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "simulators/eviden/qaptiva.pyx":14
+/* "qaptiva.pyx":14
  * 
  * 
  * cpdef object create_remote_qpu(str host):             # <<<<<<<<<<<<<<
@@ -2934,14 +2936,14 @@ int QAPTIVA_QDMI_device_finalize(void) {
  *     Establishes a connection to a remote quantum processing unit (QPU) using myQLM's RemoteQPU interface.
 */
 
-static PyObject *__pyx_pw_10simulators_6eviden_7qaptiva_1create_remote_qpu(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_7qaptiva_1create_remote_qpu(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_create_remote_qpu(PyObject *__pyx_v_host, CYTHON_UNUSED int __pyx_skip_dispatch) {
+static PyObject *__pyx_f_7qaptiva_create_remote_qpu(PyObject *__pyx_v_host, CYTHON_UNUSED int __pyx_skip_dispatch) {
   PyObject *__pyx_v_u = 0;
   PyObject *__pyx_v_p = 0;
   PyObject *__pyx_v_RemoteQPU = NULL;
@@ -2963,7 +2965,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_create_remote_qpu(PyObjec
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("create_remote_qpu", 0);
 
-  /* "simulators/eviden/qaptiva.pyx":28
+  /* "qaptiva.pyx":28
  *     cdef str u
  *     cdef str p
  *     try:             # <<<<<<<<<<<<<<
@@ -2979,7 +2981,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_create_remote_qpu(PyObjec
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "simulators/eviden/qaptiva.pyx":29
+      /* "qaptiva.pyx":29
  *     cdef str p
  *     try:
  *         from qat.core.qpu import RemoteQPU             # <<<<<<<<<<<<<<
@@ -3001,7 +3003,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_create_remote_qpu(PyObjec
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-      /* "simulators/eviden/qaptiva.pyx":30
+      /* "qaptiva.pyx":30
  *     try:
  *         from qat.core.qpu import RemoteQPU
  *         if ":" in host:             # <<<<<<<<<<<<<<
@@ -3015,7 +3017,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_create_remote_qpu(PyObjec
       __pyx_t_6 = (__Pyx_PyUnicode_ContainsTF(__pyx_mstate_global->__pyx_kp_u__2, __pyx_v_host, Py_EQ)); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 30, __pyx_L3_error)
       if (__pyx_t_6) {
 
-        /* "simulators/eviden/qaptiva.pyx":31
+        /* "qaptiva.pyx":31
  *         from qat.core.qpu import RemoteQPU
  *         if ":" in host:
  *             u, p = host.split(":", 1)             # <<<<<<<<<<<<<<
@@ -3058,7 +3060,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_create_remote_qpu(PyObjec
         __pyx_v_p = ((PyObject*)__pyx_t_7);
         __pyx_t_7 = 0;
 
-        /* "simulators/eviden/qaptiva.pyx":32
+        /* "qaptiva.pyx":32
  *         if ":" in host:
  *             u, p = host.split(":", 1)
  *             return RemoteQPU(host=u, port=int(p)) # myQLM's "RemoteQPU" expects "host=..., port=...".             # <<<<<<<<<<<<<<
@@ -3101,7 +3103,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_create_remote_qpu(PyObjec
         __pyx_t_5 = 0;
         goto __pyx_L7_try_return;
 
-        /* "simulators/eviden/qaptiva.pyx":30
+        /* "qaptiva.pyx":30
  *     try:
  *         from qat.core.qpu import RemoteQPU
  *         if ":" in host:             # <<<<<<<<<<<<<<
@@ -3110,7 +3112,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_create_remote_qpu(PyObjec
 */
       }
 
-      /* "simulators/eviden/qaptiva.pyx":35
+      /* "qaptiva.pyx":35
  *         else:
  *             # default port, if your stack expects one; adjust if needed
  *             return RemoteQPU(host=host)             # <<<<<<<<<<<<<<
@@ -3151,7 +3153,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_create_remote_qpu(PyObjec
         goto __pyx_L7_try_return;
       }
 
-      /* "simulators/eviden/qaptiva.pyx":28
+      /* "qaptiva.pyx":28
  *     cdef str u
  *     cdef str p
  *     try:             # <<<<<<<<<<<<<<
@@ -3166,7 +3168,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_create_remote_qpu(PyObjec
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-    /* "simulators/eviden/qaptiva.pyx":36
+    /* "qaptiva.pyx":36
  *             # default port, if your stack expects one; adjust if needed
  *             return RemoteQPU(host=host)
  *     except Exception:             # <<<<<<<<<<<<<<
@@ -3177,7 +3179,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_create_remote_qpu(PyObjec
     if (__pyx_t_11) {
       __Pyx_ErrRestore(0,0,0);
 
-      /* "simulators/eviden/qaptiva.pyx":37
+      /* "qaptiva.pyx":37
  *             return RemoteQPU(host=host)
  *     except Exception:
  *         return None             # <<<<<<<<<<<<<<
@@ -3190,7 +3192,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_create_remote_qpu(PyObjec
     }
     goto __pyx_L5_except_error;
 
-    /* "simulators/eviden/qaptiva.pyx":28
+    /* "qaptiva.pyx":28
  *     cdef str u
  *     cdef str p
  *     try:             # <<<<<<<<<<<<<<
@@ -3217,7 +3219,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_create_remote_qpu(PyObjec
     goto __pyx_L0;
   }
 
-  /* "simulators/eviden/qaptiva.pyx":14
+  /* "qaptiva.pyx":14
  * 
  * 
  * cpdef object create_remote_qpu(str host):             # <<<<<<<<<<<<<<
@@ -3232,7 +3234,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_create_remote_qpu(PyObjec
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
   __Pyx_XDECREF(__pyx_t_10);
-  __Pyx_AddTraceback("simulators.eviden.qaptiva.create_remote_qpu", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("qaptiva.create_remote_qpu", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_u);
@@ -3244,16 +3246,16 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_create_remote_qpu(PyObjec
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10simulators_6eviden_7qaptiva_1create_remote_qpu(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_7qaptiva_1create_remote_qpu(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-PyDoc_STRVAR(__pyx_doc_10simulators_6eviden_7qaptiva_create_remote_qpu, "\n    Establishes a connection to a remote quantum processing unit (QPU) using myQLM's RemoteQPU interface.\n\n    For instance if the user provides something like \"localhost:8080\" then the function splits into host and\n    port in the following way:\n    u = \"localhost\"\n    p = \"8080\"\n\n    then RemoteQPU(host=u, port=int(p)) creates an object that acts as a proxy. If anything fails, it returns\n    'None'\n");
-static PyMethodDef __pyx_mdef_10simulators_6eviden_7qaptiva_1create_remote_qpu = {"create_remote_qpu", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10simulators_6eviden_7qaptiva_1create_remote_qpu, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_10simulators_6eviden_7qaptiva_create_remote_qpu};
-static PyObject *__pyx_pw_10simulators_6eviden_7qaptiva_1create_remote_qpu(PyObject *__pyx_self, 
+PyDoc_STRVAR(__pyx_doc_7qaptiva_create_remote_qpu, "\n    Establishes a connection to a remote quantum processing unit (QPU) using myQLM's RemoteQPU interface.\n\n    For instance if the user provides something like \"localhost:8080\" then the function splits into host and\n    port in the following way:\n    u = \"localhost\"\n    p = \"8080\"\n\n    then RemoteQPU(host=u, port=int(p)) creates an object that acts as a proxy. If anything fails, it returns\n    'None'\n");
+static PyMethodDef __pyx_mdef_7qaptiva_1create_remote_qpu = {"create_remote_qpu", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7qaptiva_1create_remote_qpu, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_7qaptiva_create_remote_qpu};
+static PyObject *__pyx_pw_7qaptiva_1create_remote_qpu(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3315,12 +3317,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
     Py_XDECREF(values[__pyx_temp]);
   }
-  __Pyx_AddTraceback("simulators.eviden.qaptiva.create_remote_qpu", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("qaptiva.create_remote_qpu", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_host), (&PyUnicode_Type), 1, "host", 1))) __PYX_ERR(0, 14, __pyx_L1_error)
-  __pyx_r = __pyx_pf_10simulators_6eviden_7qaptiva_create_remote_qpu(__pyx_self, __pyx_v_host);
+  __pyx_r = __pyx_pf_7qaptiva_create_remote_qpu(__pyx_self, __pyx_v_host);
 
   /* function exit code */
   goto __pyx_L0;
@@ -3339,7 +3341,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10simulators_6eviden_7qaptiva_create_remote_qpu(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_host) {
+static PyObject *__pyx_pf_7qaptiva_create_remote_qpu(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_host) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3348,7 +3350,7 @@ static PyObject *__pyx_pf_10simulators_6eviden_7qaptiva_create_remote_qpu(CYTHON
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("create_remote_qpu", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_10simulators_6eviden_7qaptiva_create_remote_qpu(__pyx_v_host, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 14, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_7qaptiva_create_remote_qpu(__pyx_v_host, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 14, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -3357,7 +3359,7 @@ static PyObject *__pyx_pf_10simulators_6eviden_7qaptiva_create_remote_qpu(CYTHON
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("simulators.eviden.qaptiva.create_remote_qpu", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("qaptiva.create_remote_qpu", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -3365,7 +3367,7 @@ static PyObject *__pyx_pf_10simulators_6eviden_7qaptiva_create_remote_qpu(CYTHON
   return __pyx_r;
 }
 
-/* "simulators/eviden/qaptiva.pyx":40
+/* "qaptiva.pyx":40
  * 
  * 
  * cdef bint _is_bad(double x) nogil:             # <<<<<<<<<<<<<<
@@ -3373,12 +3375,12 @@ static PyObject *__pyx_pf_10simulators_6eviden_7qaptiva_create_remote_qpu(CYTHON
  *     a tiny helper function in Cython
 */
 
-static int __pyx_f_10simulators_6eviden_7qaptiva__is_bad(double __pyx_v_x) {
+static int __pyx_f_7qaptiva__is_bad(double __pyx_v_x) {
   int __pyx_r;
   int __pyx_t_1;
   int __pyx_t_2;
 
-  /* "simulators/eviden/qaptiva.pyx":45
+  /* "qaptiva.pyx":45
  *     introduced for the function submit_noisy_job()
  *     """
  *     return x <= 0 or isnan(x)             # <<<<<<<<<<<<<<
@@ -3397,7 +3399,7 @@ static int __pyx_f_10simulators_6eviden_7qaptiva__is_bad(double __pyx_v_x) {
   __pyx_r = __pyx_t_1;
   goto __pyx_L0;
 
-  /* "simulators/eviden/qaptiva.pyx":40
+  /* "qaptiva.pyx":40
  * 
  * 
  * cdef bint _is_bad(double x) nogil:             # <<<<<<<<<<<<<<
@@ -3410,7 +3412,7 @@ static int __pyx_f_10simulators_6eviden_7qaptiva__is_bad(double __pyx_v_x) {
   return __pyx_r;
 }
 
-/* "simulators/eviden/qaptiva.pyx":47
+/* "qaptiva.pyx":47
  *     return x <= 0 or isnan(x)
  * 
  * cpdef object submit_noisy_job(str host, str qasm_string, int nshots, double t1=40000, double t2=22000):             # <<<<<<<<<<<<<<
@@ -3418,14 +3420,14 @@ static int __pyx_f_10simulators_6eviden_7qaptiva__is_bad(double __pyx_v_x) {
  *     sends a quantum circuit (written in the language QASM) to a Flask-based backend over HTTP, tells the backend
 */
 
-static PyObject *__pyx_pw_10simulators_6eviden_7qaptiva_3submit_noisy_job(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_7qaptiva_3submit_noisy_job(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject *__pyx_v_host, PyObject *__pyx_v_qasm_string, int __pyx_v_nshots, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_10simulators_6eviden_7qaptiva_submit_noisy_job *__pyx_optional_args) {
+static PyObject *__pyx_f_7qaptiva_submit_noisy_job(PyObject *__pyx_v_host, PyObject *__pyx_v_qasm_string, int __pyx_v_nshots, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_7qaptiva_submit_noisy_job *__pyx_optional_args) {
   double __pyx_v_t1 = ((double)40000.0);
   double __pyx_v_t2 = ((double)22000.0);
   PyObject *__pyx_v_payload = 0;
@@ -3475,7 +3477,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
     }
   }
 
-  /* "simulators/eviden/qaptiva.pyx":62
+  /* "qaptiva.pyx":62
  * 
  *     # ---- validate inputs (client-side) ----
  *     if nshots <= 0:             # <<<<<<<<<<<<<<
@@ -3485,7 +3487,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
   __pyx_t_1 = (__pyx_v_nshots <= 0);
   if (unlikely(__pyx_t_1)) {
 
-    /* "simulators/eviden/qaptiva.pyx":63
+    /* "qaptiva.pyx":63
  *     # ---- validate inputs (client-side) ----
  *     if nshots <= 0:
  *         raise ValueError("nshots must be a positive integer")             # <<<<<<<<<<<<<<
@@ -3508,7 +3510,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __PYX_ERR(0, 63, __pyx_L1_error)
 
-    /* "simulators/eviden/qaptiva.pyx":62
+    /* "qaptiva.pyx":62
  * 
  *     # ---- validate inputs (client-side) ----
  *     if nshots <= 0:             # <<<<<<<<<<<<<<
@@ -3517,25 +3519,25 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
 */
   }
 
-  /* "simulators/eviden/qaptiva.pyx":64
+  /* "qaptiva.pyx":64
  *     if nshots <= 0:
  *         raise ValueError("nshots must be a positive integer")
  *     if _is_bad(t1) or _is_bad(t2):             # <<<<<<<<<<<<<<
  *         raise ValueError("t1 and t2 must be positive floats")
  * 
 */
-  __pyx_t_6 = __pyx_f_10simulators_6eviden_7qaptiva__is_bad(__pyx_v_t1); if (unlikely(__pyx_t_6 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 64, __pyx_L1_error)
+  __pyx_t_6 = __pyx_f_7qaptiva__is_bad(__pyx_v_t1); if (unlikely(__pyx_t_6 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 64, __pyx_L1_error)
   if (!__pyx_t_6) {
   } else {
     __pyx_t_1 = __pyx_t_6;
     goto __pyx_L5_bool_binop_done;
   }
-  __pyx_t_6 = __pyx_f_10simulators_6eviden_7qaptiva__is_bad(__pyx_v_t2); if (unlikely(__pyx_t_6 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 64, __pyx_L1_error)
+  __pyx_t_6 = __pyx_f_7qaptiva__is_bad(__pyx_v_t2); if (unlikely(__pyx_t_6 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 64, __pyx_L1_error)
   __pyx_t_1 = __pyx_t_6;
   __pyx_L5_bool_binop_done:;
   if (unlikely(__pyx_t_1)) {
 
-    /* "simulators/eviden/qaptiva.pyx":65
+    /* "qaptiva.pyx":65
  *         raise ValueError("nshots must be a positive integer")
  *     if _is_bad(t1) or _is_bad(t2):
  *         raise ValueError("t1 and t2 must be positive floats")             # <<<<<<<<<<<<<<
@@ -3558,7 +3560,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __PYX_ERR(0, 65, __pyx_L1_error)
 
-    /* "simulators/eviden/qaptiva.pyx":64
+    /* "qaptiva.pyx":64
  *     if nshots <= 0:
  *         raise ValueError("nshots must be a positive integer")
  *     if _is_bad(t1) or _is_bad(t2):             # <<<<<<<<<<<<<<
@@ -3567,7 +3569,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
 */
   }
 
-  /* "simulators/eviden/qaptiva.pyx":69
+  /* "qaptiva.pyx":69
  *     # Preparing the payload (a dictonary that will be converted to JSON)
  *     payload = {
  *         "aqasm": qasm_string,             # <<<<<<<<<<<<<<
@@ -3578,7 +3580,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_aqasm, __pyx_v_qasm_string) < (0)) __PYX_ERR(0, 69, __pyx_L1_error)
 
-  /* "simulators/eviden/qaptiva.pyx":70
+  /* "qaptiva.pyx":70
  *     payload = {
  *         "aqasm": qasm_string,
  *         "t1": t1,             # <<<<<<<<<<<<<<
@@ -3590,7 +3592,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
   if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_t1, __pyx_t_3) < (0)) __PYX_ERR(0, 69, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "simulators/eviden/qaptiva.pyx":71
+  /* "qaptiva.pyx":71
  *         "aqasm": qasm_string,
  *         "t1": t1,
  *         "t2": t2,             # <<<<<<<<<<<<<<
@@ -3602,7 +3604,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
   if (PyDict_SetItem(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_t2, __pyx_t_3) < (0)) __PYX_ERR(0, 69, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "simulators/eviden/qaptiva.pyx":72
+  /* "qaptiva.pyx":72
  *         "t1": t1,
  *         "t2": t2,
  *         "nbshots": nshots,             # <<<<<<<<<<<<<<
@@ -3616,7 +3618,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
   __pyx_v_payload = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "simulators/eviden/qaptiva.pyx":76
+  /* "qaptiva.pyx":76
  * 
  *     # This sends the job to the given Flask endpoint using HTTP POST.
  *     try:             # <<<<<<<<<<<<<<
@@ -3632,7 +3634,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
     __Pyx_XGOTREF(__pyx_t_9);
     /*try:*/ {
 
-      /* "simulators/eviden/qaptiva.pyx":77
+      /* "qaptiva.pyx":77
  *     # This sends the job to the given Flask endpoint using HTTP POST.
  *     try:
  *         import requests             # <<<<<<<<<<<<<<
@@ -3644,7 +3646,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
       __pyx_v_requests = __pyx_t_2;
       __pyx_t_2 = 0;
 
-      /* "simulators/eviden/qaptiva.pyx":78
+      /* "qaptiva.pyx":78
  *     try:
  *         import requests
  *         resp = requests.post(host, json=payload, timeout=10)             # <<<<<<<<<<<<<<
@@ -3669,7 +3671,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
       __pyx_v_resp = __pyx_t_2;
       __pyx_t_2 = 0;
 
-      /* "simulators/eviden/qaptiva.pyx":79
+      /* "qaptiva.pyx":79
  *         import requests
  *         resp = requests.post(host, json=payload, timeout=10)
  *         if resp.status_code != 200:             # <<<<<<<<<<<<<<
@@ -3682,7 +3684,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       if (__pyx_t_1) {
 
-        /* "simulators/eviden/qaptiva.pyx":81
+        /* "qaptiva.pyx":81
  *         if resp.status_code != 200:
  *             # Server returned an application error; surface and return None
  *             try:             # <<<<<<<<<<<<<<
@@ -3698,7 +3700,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
           __Pyx_XGOTREF(__pyx_t_12);
           /*try:*/ {
 
-            /* "simulators/eviden/qaptiva.pyx":82
+            /* "qaptiva.pyx":82
  *             # Server returned an application error; surface and return None
  *             try:
  *                 print("Error from server:", resp.text)             # <<<<<<<<<<<<<<
@@ -3722,7 +3724,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
             }
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-            /* "simulators/eviden/qaptiva.pyx":81
+            /* "qaptiva.pyx":81
  *         if resp.status_code != 200:
  *             # Server returned an application error; surface and return None
  *             try:             # <<<<<<<<<<<<<<
@@ -3740,7 +3742,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
           __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-          /* "simulators/eviden/qaptiva.pyx":83
+          /* "qaptiva.pyx":83
  *             try:
  *                 print("Error from server:", resp.text)
  *             except Exception:             # <<<<<<<<<<<<<<
@@ -3754,7 +3756,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
           }
           goto __pyx_L16_except_error;
 
-          /* "simulators/eviden/qaptiva.pyx":81
+          /* "qaptiva.pyx":81
  *         if resp.status_code != 200:
  *             # Server returned an application error; surface and return None
  *             try:             # <<<<<<<<<<<<<<
@@ -3775,7 +3777,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
           __pyx_L19_try_end:;
         }
 
-        /* "simulators/eviden/qaptiva.pyx":85
+        /* "qaptiva.pyx":85
  *             except Exception:
  *                 pass
  *             return None             # <<<<<<<<<<<<<<
@@ -3786,7 +3788,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
         __pyx_r = Py_None; __Pyx_INCREF(Py_None);
         goto __pyx_L11_try_return;
 
-        /* "simulators/eviden/qaptiva.pyx":79
+        /* "qaptiva.pyx":79
  *         import requests
  *         resp = requests.post(host, json=payload, timeout=10)
  *         if resp.status_code != 200:             # <<<<<<<<<<<<<<
@@ -3795,7 +3797,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
 */
       }
 
-      /* "simulators/eviden/qaptiva.pyx":87
+      /* "qaptiva.pyx":87
  *             return None
  * 
  *         data = resp.json()             # <<<<<<<<<<<<<<
@@ -3815,7 +3817,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
       __pyx_v_data = __pyx_t_2;
       __pyx_t_2 = 0;
 
-      /* "simulators/eviden/qaptiva.pyx":88
+      /* "qaptiva.pyx":88
  * 
  *         data = resp.json()
  *         result = data.get("result", {})             # <<<<<<<<<<<<<<
@@ -3838,7 +3840,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
       __pyx_v_result = __pyx_t_2;
       __pyx_t_2 = 0;
 
-      /* "simulators/eviden/qaptiva.pyx":89
+      /* "qaptiva.pyx":89
  *         data = resp.json()
  *         result = data.get("result", {})
  *         probs = result.get("state_probabilities", {})             # <<<<<<<<<<<<<<
@@ -3861,7 +3863,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
       __pyx_v_probs = __pyx_t_2;
       __pyx_t_2 = 0;
 
-      /* "simulators/eviden/qaptiva.pyx":92
+      /* "qaptiva.pyx":92
  * 
  *         # Expect a mapping: { "010": 0.12, "111": 0.88, ... }
  *         if not isinstance(probs, dict):             # <<<<<<<<<<<<<<
@@ -3872,7 +3874,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
       __pyx_t_6 = (!__pyx_t_1);
       if (unlikely(__pyx_t_6)) {
 
-        /* "simulators/eviden/qaptiva.pyx":93
+        /* "qaptiva.pyx":93
  *         # Expect a mapping: { "010": 0.12, "111": 0.88, ... }
  *         if not isinstance(probs, dict):
  *             raise ValueError("Malformed server response: 'state_probabilities' must be a dict")             # <<<<<<<<<<<<<<
@@ -3895,7 +3897,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __PYX_ERR(0, 93, __pyx_L7_error)
 
-        /* "simulators/eviden/qaptiva.pyx":92
+        /* "qaptiva.pyx":92
  * 
  *         # Expect a mapping: { "010": 0.12, "111": 0.88, ... }
  *         if not isinstance(probs, dict):             # <<<<<<<<<<<<<<
@@ -3904,7 +3906,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
 */
       }
 
-      /* "simulators/eviden/qaptiva.pyx":96
+      /* "qaptiva.pyx":96
  * 
  *         # For deterministic order, sort states lexicographically
  *         states = sorted(probs.keys())             # <<<<<<<<<<<<<<
@@ -3928,7 +3930,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
       __pyx_v_states = __pyx_t_13;
       __pyx_t_13 = 0;
 
-      /* "simulators/eviden/qaptiva.pyx":97
+      /* "qaptiva.pyx":97
  *         # For deterministic order, sort states lexicographically
  *         states = sorted(probs.keys())
  *         probabilities = [probs[s] for s in states]             # <<<<<<<<<<<<<<
@@ -3970,7 +3972,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
       __pyx_v_probabilities = ((PyObject*)__pyx_t_13);
       __pyx_t_13 = 0;
 
-      /* "simulators/eviden/qaptiva.pyx":99
+      /* "qaptiva.pyx":99
  *         probabilities = [probs[s] for s in states]
  * 
  *         return [",".join(states)] + probabilities             # <<<<<<<<<<<<<<
@@ -3992,7 +3994,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
       __pyx_t_13 = 0;
       goto __pyx_L11_try_return;
 
-      /* "simulators/eviden/qaptiva.pyx":76
+      /* "qaptiva.pyx":76
  * 
  *     # This sends the job to the given Flask endpoint using HTTP POST.
  *     try:             # <<<<<<<<<<<<<<
@@ -4006,7 +4008,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "simulators/eviden/qaptiva.pyx":101
+    /* "qaptiva.pyx":101
  *         return [",".join(states)] + probabilities
  * 
  *     except Exception as e:             # <<<<<<<<<<<<<<
@@ -4015,7 +4017,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
 */
     __pyx_t_14 = __Pyx_PyErr_ExceptionMatches(((PyObject *)(((PyTypeObject*)PyExc_Exception))));
     if (__pyx_t_14) {
-      __Pyx_AddTraceback("simulators.eviden.qaptiva.submit_noisy_job", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("qaptiva.submit_noisy_job", __pyx_clineno, __pyx_lineno, __pyx_filename);
       if (__Pyx_GetException(&__pyx_t_13, &__pyx_t_2, &__pyx_t_3) < 0) __PYX_ERR(0, 101, __pyx_L9_except_error)
       __Pyx_XGOTREF(__pyx_t_13);
       __Pyx_XGOTREF(__pyx_t_2);
@@ -4024,7 +4026,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
       __pyx_v_e = __pyx_t_2;
       /*try:*/ {
 
-        /* "simulators/eviden/qaptiva.pyx":103
+        /* "qaptiva.pyx":103
  *     except Exception as e:
  *         # Network/JSON/parsing issues -> re-raise so caller can handke
  *         print("HTTP submit error:",e)             # <<<<<<<<<<<<<<
@@ -4045,7 +4047,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
         }
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-        /* "simulators/eviden/qaptiva.pyx":104
+        /* "qaptiva.pyx":104
  *         # Network/JSON/parsing issues -> re-raise so caller can handke
  *         print("HTTP submit error:",e)
  *         raise             # <<<<<<<<<<<<<<
@@ -4060,7 +4062,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
         __PYX_ERR(0, 104, __pyx_L35_error)
       }
 
-      /* "simulators/eviden/qaptiva.pyx":101
+      /* "qaptiva.pyx":101
  *         return [",".join(states)] + probabilities
  * 
  *     except Exception as e:             # <<<<<<<<<<<<<<
@@ -4104,7 +4106,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
     }
     goto __pyx_L9_except_error;
 
-    /* "simulators/eviden/qaptiva.pyx":76
+    /* "qaptiva.pyx":76
  * 
  *     # This sends the job to the given Flask endpoint using HTTP POST.
  *     try:             # <<<<<<<<<<<<<<
@@ -4125,7 +4127,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
     goto __pyx_L0;
   }
 
-  /* "simulators/eviden/qaptiva.pyx":47
+  /* "qaptiva.pyx":47
  *     return x <= 0 or isnan(x)
  * 
  * cpdef object submit_noisy_job(str host, str qasm_string, int nshots, double t1=40000, double t2=22000):             # <<<<<<<<<<<<<<
@@ -4141,7 +4143,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
   __Pyx_XDECREF(__pyx_t_13);
   __Pyx_XDECREF(__pyx_t_16);
   __Pyx_XDECREF(__pyx_t_17);
-  __Pyx_AddTraceback("simulators.eviden.qaptiva.submit_noisy_job", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("qaptiva.submit_noisy_job", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_payload);
@@ -4160,16 +4162,16 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(PyObject
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10simulators_6eviden_7qaptiva_3submit_noisy_job(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_7qaptiva_3submit_noisy_job(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-PyDoc_STRVAR(__pyx_doc_10simulators_6eviden_7qaptiva_2submit_noisy_job, "\n    sends a quantum circuit (written in the language QASM) to a Flask-based backend over HTTP, tells the backend\n    to simulate it with noise (t1,t2 parameters), and returns the resulting probability distribution of quantum states.\n\n    * qasm_string: the OpenQASM code for the quantum circuit\n    * nshots: how many times to run the circuit (Monte Carlo sampling)\n    * t1, t2: noise parameters (relation time and decoherence time)\n    * QASM: Quantum Assembly Language\n    ");
-static PyMethodDef __pyx_mdef_10simulators_6eviden_7qaptiva_3submit_noisy_job = {"submit_noisy_job", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10simulators_6eviden_7qaptiva_3submit_noisy_job, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_10simulators_6eviden_7qaptiva_2submit_noisy_job};
-static PyObject *__pyx_pw_10simulators_6eviden_7qaptiva_3submit_noisy_job(PyObject *__pyx_self, 
+PyDoc_STRVAR(__pyx_doc_7qaptiva_2submit_noisy_job, "\n    sends a quantum circuit (written in the language QASM) to a Flask-based backend over HTTP, tells the backend\n    to simulate it with noise (t1,t2 parameters), and returns the resulting probability distribution of quantum states.\n\n    * qasm_string: the OpenQASM code for the quantum circuit\n    * nshots: how many times to run the circuit (Monte Carlo sampling)\n    * t1, t2: noise parameters (relation time and decoherence time)\n    * QASM: Quantum Assembly Language\n    ");
+static PyMethodDef __pyx_mdef_7qaptiva_3submit_noisy_job = {"submit_noisy_job", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7qaptiva_3submit_noisy_job, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_7qaptiva_2submit_noisy_job};
+static PyObject *__pyx_pw_7qaptiva_3submit_noisy_job(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -4278,13 +4280,13 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
     Py_XDECREF(values[__pyx_temp]);
   }
-  __Pyx_AddTraceback("simulators.eviden.qaptiva.submit_noisy_job", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("qaptiva.submit_noisy_job", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_host), (&PyUnicode_Type), 1, "host", 1))) __PYX_ERR(0, 47, __pyx_L1_error)
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_qasm_string), (&PyUnicode_Type), 1, "qasm_string", 1))) __PYX_ERR(0, 47, __pyx_L1_error)
-  __pyx_r = __pyx_pf_10simulators_6eviden_7qaptiva_2submit_noisy_job(__pyx_self, __pyx_v_host, __pyx_v_qasm_string, __pyx_v_nshots, __pyx_v_t1, __pyx_v_t2);
+  __pyx_r = __pyx_pf_7qaptiva_2submit_noisy_job(__pyx_self, __pyx_v_host, __pyx_v_qasm_string, __pyx_v_nshots, __pyx_v_t1, __pyx_v_t2);
 
   /* function exit code */
   goto __pyx_L0;
@@ -4303,11 +4305,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10simulators_6eviden_7qaptiva_2submit_noisy_job(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_host, PyObject *__pyx_v_qasm_string, int __pyx_v_nshots, double __pyx_v_t1, double __pyx_v_t2) {
+static PyObject *__pyx_pf_7qaptiva_2submit_noisy_job(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_host, PyObject *__pyx_v_qasm_string, int __pyx_v_nshots, double __pyx_v_t1, double __pyx_v_t2) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  struct __pyx_opt_args_10simulators_6eviden_7qaptiva_submit_noisy_job __pyx_t_2;
+  struct __pyx_opt_args_7qaptiva_submit_noisy_job __pyx_t_2;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -4316,7 +4318,7 @@ static PyObject *__pyx_pf_10simulators_6eviden_7qaptiva_2submit_noisy_job(CYTHON
   __pyx_t_2.__pyx_n = 2;
   __pyx_t_2.t1 = __pyx_v_t1;
   __pyx_t_2.t2 = __pyx_v_t2;
-  __pyx_t_1 = __pyx_f_10simulators_6eviden_7qaptiva_submit_noisy_job(__pyx_v_host, __pyx_v_qasm_string, __pyx_v_nshots, 1, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 47, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_7qaptiva_submit_noisy_job(__pyx_v_host, __pyx_v_qasm_string, __pyx_v_nshots, 1, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 47, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -4325,7 +4327,7 @@ static PyObject *__pyx_pf_10simulators_6eviden_7qaptiva_2submit_noisy_job(CYTHON
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("simulators.eviden.qaptiva.submit_noisy_job", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("qaptiva.submit_noisy_job", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -4333,7 +4335,7 @@ static PyObject *__pyx_pf_10simulators_6eviden_7qaptiva_2submit_noisy_job(CYTHON
   return __pyx_r;
 }
 
-/* "simulators/eviden/qaptiva.pyx":107
+/* "qaptiva.pyx":107
  * 
  * 
  * cpdef object submit_job(object remote_qpu, str qasm_string, int nshots):             # <<<<<<<<<<<<<<
@@ -4341,14 +4343,14 @@ static PyObject *__pyx_pf_10simulators_6eviden_7qaptiva_2submit_noisy_job(CYTHON
  *      The function submits a quantum circuit to a remote QPU and collects the results.
 */
 
-static PyObject *__pyx_pw_10simulators_6eviden_7qaptiva_5submit_job(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_7qaptiva_5submit_job(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_job(PyObject *__pyx_v_remote_qpu, PyObject *__pyx_v_qasm_string, int __pyx_v_nshots, CYTHON_UNUSED int __pyx_skip_dispatch) {
+static PyObject *__pyx_f_7qaptiva_submit_job(PyObject *__pyx_v_remote_qpu, PyObject *__pyx_v_qasm_string, int __pyx_v_nshots, CYTHON_UNUSED int __pyx_skip_dispatch) {
   PyObject *__pyx_v_states = 0;
   PyObject *__pyx_v_probs = 0;
   PyObject *__pyx_v_OqasmParser = NULL;
@@ -4376,7 +4378,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_job(PyObject *__py
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("submit_job", 0);
 
-  /* "simulators/eviden/qaptiva.pyx":111
+  /* "qaptiva.pyx":111
  *      The function submits a quantum circuit to a remote QPU and collects the results.
  *     """
  *     cdef list states = []             # <<<<<<<<<<<<<<
@@ -4388,7 +4390,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_job(PyObject *__py
   __pyx_v_states = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "simulators/eviden/qaptiva.pyx":112
+  /* "qaptiva.pyx":112
  *     """
  *     cdef list states = []
  *     cdef list probs = []             # <<<<<<<<<<<<<<
@@ -4400,7 +4402,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_job(PyObject *__py
   __pyx_v_probs = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "simulators/eviden/qaptiva.pyx":113
+  /* "qaptiva.pyx":113
  *     cdef list states = []
  *     cdef list probs = []
  *     try:             # <<<<<<<<<<<<<<
@@ -4416,7 +4418,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_job(PyObject *__py
     __Pyx_XGOTREF(__pyx_t_4);
     /*try:*/ {
 
-      /* "simulators/eviden/qaptiva.pyx":114
+      /* "qaptiva.pyx":114
  *     cdef list probs = []
  *     try:
  *         from qat.interop.openqasm import OqasmParser # imports 0qasmParser from the qat (myQLM) library             # <<<<<<<<<<<<<<
@@ -4438,7 +4440,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_job(PyObject *__py
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-      /* "simulators/eviden/qaptiva.pyx":115
+      /* "qaptiva.pyx":115
  *     try:
  *         from qat.interop.openqasm import OqasmParser # imports 0qasmParser from the qat (myQLM) library
  *         parser = OqasmParser() # converts a QASM string into an executable form             # <<<<<<<<<<<<<<
@@ -4471,7 +4473,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_job(PyObject *__py
       __pyx_v_parser = __pyx_t_5;
       __pyx_t_5 = 0;
 
-      /* "simulators/eviden/qaptiva.pyx":116
+      /* "qaptiva.pyx":116
  *         from qat.interop.openqasm import OqasmParser # imports 0qasmParser from the qat (myQLM) library
  *         parser = OqasmParser() # converts a QASM string into an executable form
  *         circuit = parser.compile(qasm_string) # turns the textual QASM into an internal circuit rep.             # <<<<<<<<<<<<<<
@@ -4491,7 +4493,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_job(PyObject *__py
       __pyx_v_circuit = __pyx_t_5;
       __pyx_t_5 = 0;
 
-      /* "simulators/eviden/qaptiva.pyx":117
+      /* "qaptiva.pyx":117
  *         parser = OqasmParser() # converts a QASM string into an executable form
  *         circuit = parser.compile(qasm_string) # turns the textual QASM into an internal circuit rep.
  *         job = circuit.to_job(nbshots=nshots) # creates a job defining how many times the circuit will be executed             # <<<<<<<<<<<<<<
@@ -4518,7 +4520,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_job(PyObject *__py
       __pyx_v_job = __pyx_t_5;
       __pyx_t_5 = 0;
 
-      /* "simulators/eviden/qaptiva.pyx":118
+      /* "qaptiva.pyx":118
  *         circuit = parser.compile(qasm_string) # turns the textual QASM into an internal circuit rep.
  *         job = circuit.to_job(nbshots=nshots) # creates a job defining how many times the circuit will be executed
  *         raw_results = remote_qpu.submit(job) # performs the quantum computation             # <<<<<<<<<<<<<<
@@ -4538,7 +4540,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_job(PyObject *__py
       __pyx_v_raw_results = __pyx_t_5;
       __pyx_t_5 = 0;
 
-      /* "simulators/eviden/qaptiva.pyx":120
+      /* "qaptiva.pyx":120
  *         raw_results = remote_qpu.submit(job) # performs the quantum computation
  * 
  *         for r in raw_results:             # <<<<<<<<<<<<<<
@@ -4597,7 +4599,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_job(PyObject *__py
         __Pyx_XDECREF_SET(__pyx_v_r, __pyx_t_8);
         __pyx_t_8 = 0;
 
-        /* "simulators/eviden/qaptiva.pyx":121
+        /* "qaptiva.pyx":121
  * 
  *         for r in raw_results:
  *             states.append(r.state.bitstring) # gives the measured quantum state like "0101"             # <<<<<<<<<<<<<<
@@ -4612,7 +4614,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_job(PyObject *__py
         __pyx_t_11 = __Pyx_PyList_Append(__pyx_v_states, __pyx_t_1); if (unlikely(__pyx_t_11 == ((int)-1))) __PYX_ERR(0, 121, __pyx_L3_error)
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-        /* "simulators/eviden/qaptiva.pyx":122
+        /* "qaptiva.pyx":122
  *         for r in raw_results:
  *             states.append(r.state.bitstring) # gives the measured quantum state like "0101"
  *             probs.append(float(r.probability)) # gives the probability             # <<<<<<<<<<<<<<
@@ -4627,7 +4629,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_job(PyObject *__py
         __pyx_t_11 = __Pyx_PyList_Append(__pyx_v_probs, __pyx_t_8); if (unlikely(__pyx_t_11 == ((int)-1))) __PYX_ERR(0, 122, __pyx_L3_error)
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-        /* "simulators/eviden/qaptiva.pyx":120
+        /* "qaptiva.pyx":120
  *         raw_results = remote_qpu.submit(job) # performs the quantum computation
  * 
  *         for r in raw_results:             # <<<<<<<<<<<<<<
@@ -4637,7 +4639,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_job(PyObject *__py
       }
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-      /* "simulators/eviden/qaptiva.pyx":124
+      /* "qaptiva.pyx":124
  *             probs.append(float(r.probability)) # gives the probability
  * 
  *         return [",".join(states)] + probs # returns the results             # <<<<<<<<<<<<<<
@@ -4659,7 +4661,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_job(PyObject *__py
       __pyx_t_5 = 0;
       goto __pyx_L7_try_return;
 
-      /* "simulators/eviden/qaptiva.pyx":113
+      /* "qaptiva.pyx":113
  *     cdef list states = []
  *     cdef list probs = []
  *     try:             # <<<<<<<<<<<<<<
@@ -4673,20 +4675,23 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_job(PyObject *__py
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-    /* "simulators/eviden/qaptiva.pyx":125
+    /* "qaptiva.pyx":125
  * 
  *         return [",".join(states)] + probs # returns the results
  *     except Exception:             # <<<<<<<<<<<<<<
  *         return None
+ * 
 */
     __pyx_t_12 = __Pyx_PyErr_ExceptionMatches(((PyObject *)(((PyTypeObject*)PyExc_Exception))));
     if (__pyx_t_12) {
       __Pyx_ErrRestore(0,0,0);
 
-      /* "simulators/eviden/qaptiva.pyx":126
+      /* "qaptiva.pyx":126
  *         return [",".join(states)] + probs # returns the results
  *     except Exception:
  *         return None             # <<<<<<<<<<<<<<
+ * 
+ * 
 */
       __Pyx_XDECREF(__pyx_r);
       __pyx_r = Py_None; __Pyx_INCREF(Py_None);
@@ -4694,7 +4699,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_job(PyObject *__py
     }
     goto __pyx_L5_except_error;
 
-    /* "simulators/eviden/qaptiva.pyx":113
+    /* "qaptiva.pyx":113
  *     cdef list states = []
  *     cdef list probs = []
  *     try:             # <<<<<<<<<<<<<<
@@ -4721,7 +4726,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_job(PyObject *__py
     goto __pyx_L0;
   }
 
-  /* "simulators/eviden/qaptiva.pyx":107
+  /* "qaptiva.pyx":107
  * 
  * 
  * cpdef object submit_job(object remote_qpu, str qasm_string, int nshots):             # <<<<<<<<<<<<<<
@@ -4735,7 +4740,7 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_job(PyObject *__py
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_8);
-  __Pyx_AddTraceback("simulators.eviden.qaptiva.submit_job", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("qaptiva.submit_job", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_states);
@@ -4752,16 +4757,16 @@ static PyObject *__pyx_f_10simulators_6eviden_7qaptiva_submit_job(PyObject *__py
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10simulators_6eviden_7qaptiva_5submit_job(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_7qaptiva_5submit_job(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-PyDoc_STRVAR(__pyx_doc_10simulators_6eviden_7qaptiva_4submit_job, "\n     The function submits a quantum circuit to a remote QPU and collects the results.\n    ");
-static PyMethodDef __pyx_mdef_10simulators_6eviden_7qaptiva_5submit_job = {"submit_job", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10simulators_6eviden_7qaptiva_5submit_job, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_10simulators_6eviden_7qaptiva_4submit_job};
-static PyObject *__pyx_pw_10simulators_6eviden_7qaptiva_5submit_job(PyObject *__pyx_self, 
+PyDoc_STRVAR(__pyx_doc_7qaptiva_4submit_job, "\n     The function submits a quantum circuit to a remote QPU and collects the results.\n    ");
+static PyMethodDef __pyx_mdef_7qaptiva_5submit_job = {"submit_job", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7qaptiva_5submit_job, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_7qaptiva_4submit_job};
+static PyObject *__pyx_pw_7qaptiva_5submit_job(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -4839,12 +4844,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
     Py_XDECREF(values[__pyx_temp]);
   }
-  __Pyx_AddTraceback("simulators.eviden.qaptiva.submit_job", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("qaptiva.submit_job", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_qasm_string), (&PyUnicode_Type), 1, "qasm_string", 1))) __PYX_ERR(0, 107, __pyx_L1_error)
-  __pyx_r = __pyx_pf_10simulators_6eviden_7qaptiva_4submit_job(__pyx_self, __pyx_v_remote_qpu, __pyx_v_qasm_string, __pyx_v_nshots);
+  __pyx_r = __pyx_pf_7qaptiva_4submit_job(__pyx_self, __pyx_v_remote_qpu, __pyx_v_qasm_string, __pyx_v_nshots);
 
   /* function exit code */
   goto __pyx_L0;
@@ -4863,7 +4868,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10simulators_6eviden_7qaptiva_4submit_job(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_remote_qpu, PyObject *__pyx_v_qasm_string, int __pyx_v_nshots) {
+static PyObject *__pyx_pf_7qaptiva_4submit_job(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_remote_qpu, PyObject *__pyx_v_qasm_string, int __pyx_v_nshots) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -4872,7 +4877,7 @@ static PyObject *__pyx_pf_10simulators_6eviden_7qaptiva_4submit_job(CYTHON_UNUSE
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("submit_job", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_10simulators_6eviden_7qaptiva_submit_job(__pyx_v_remote_qpu, __pyx_v_qasm_string, __pyx_v_nshots, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 107, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_7qaptiva_submit_job(__pyx_v_remote_qpu, __pyx_v_qasm_string, __pyx_v_nshots, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 107, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -4881,11 +4886,43 @@ static PyObject *__pyx_pf_10simulators_6eviden_7qaptiva_4submit_job(CYTHON_UNUSE
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("simulators.eviden.qaptiva.submit_job", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("qaptiva.submit_job", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "qaptiva.pyx":130
+ * 
+ * ## C-test function
+ * cdef public int cy_test_add(int a, int b):             # <<<<<<<<<<<<<<
+ *     """
+ *     Simple public F function exported dl/open/dlsym tests.
+*/
+
+int cy_test_add(int __pyx_v_a, int __pyx_v_b) {
+  int __pyx_r;
+
+  /* "qaptiva.pyx":134
+ *     Simple public F function exported dl/open/dlsym tests.
+ *     """
+ *     return a+b             # <<<<<<<<<<<<<<
+*/
+  __pyx_r = (__pyx_v_a + __pyx_v_b);
+  goto __pyx_L0;
+
+  /* "qaptiva.pyx":130
+ * 
+ * ## C-test function
+ * cdef public int cy_test_add(int a, int b):             # <<<<<<<<<<<<<<
+ *     """
+ *     Simple public F function exported dl/open/dlsym tests.
+*/
+
+  /* function exit code */
+  __pyx_L0:;
   return __pyx_r;
 }
 /* #### Code section: module_exttypes ### */
@@ -5229,13 +5266,13 @@ __Pyx_RefNannySetupContext("PyInit_qaptiva", 0);
   if (__pyx_AsyncGen_init(__pyx_m) < (0)) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
   /*--- Library function declarations ---*/
-  if (__pyx_module_is_main_simulators__eviden__qaptiva) {
+  if (__pyx_module_is_main_qaptiva) {
     if (PyObject_SetAttr(__pyx_m, __pyx_mstate_global->__pyx_n_u_name, __pyx_mstate_global->__pyx_n_u_main) < (0)) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "simulators.eviden.qaptiva")) {
-      if (unlikely((PyDict_SetItemString(modules, "simulators.eviden.qaptiva", __pyx_m) < 0))) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "qaptiva")) {
+      if (unlikely((PyDict_SetItemString(modules, "qaptiva", __pyx_m) < 0))) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   /*--- Builtin init code ---*/
@@ -5253,44 +5290,44 @@ __Pyx_RefNannySetupContext("PyInit_qaptiva", 0);
   (void)__Pyx_modinit_function_import_code(__pyx_mstate);
   /*--- Execution code ---*/
 
-  /* "simulators/eviden/qaptiva.pyx":14
+  /* "qaptiva.pyx":14
  * 
  * 
  * cpdef object create_remote_qpu(str host):             # <<<<<<<<<<<<<<
  *     """
  *     Establishes a connection to a remote quantum processing unit (QPU) using myQLM's RemoteQPU interface.
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10simulators_6eviden_7qaptiva_1create_remote_qpu, 0, __pyx_mstate_global->__pyx_n_u_create_remote_qpu, NULL, __pyx_mstate_global->__pyx_n_u_simulators_eviden_qaptiva, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 14, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7qaptiva_1create_remote_qpu, 0, __pyx_mstate_global->__pyx_n_u_create_remote_qpu, NULL, __pyx_mstate_global->__pyx_n_u_qaptiva, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 14, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_create_remote_qpu, __pyx_t_2) < (0)) __PYX_ERR(0, 14, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "simulators/eviden/qaptiva.pyx":47
+  /* "qaptiva.pyx":47
  *     return x <= 0 or isnan(x)
  * 
  * cpdef object submit_noisy_job(str host, str qasm_string, int nshots, double t1=40000, double t2=22000):             # <<<<<<<<<<<<<<
  *     """
  *     sends a quantum circuit (written in the language QASM) to a Flask-based backend over HTTP, tells the backend
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10simulators_6eviden_7qaptiva_3submit_noisy_job, 0, __pyx_mstate_global->__pyx_n_u_submit_noisy_job, NULL, __pyx_mstate_global->__pyx_n_u_simulators_eviden_qaptiva, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[1])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 47, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7qaptiva_3submit_noisy_job, 0, __pyx_mstate_global->__pyx_n_u_submit_noisy_job, NULL, __pyx_mstate_global->__pyx_n_u_qaptiva, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[1])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 47, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_2, __pyx_mstate_global->__pyx_tuple[0]);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_submit_noisy_job, __pyx_t_2) < (0)) __PYX_ERR(0, 47, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "simulators/eviden/qaptiva.pyx":107
+  /* "qaptiva.pyx":107
  * 
  * 
  * cpdef object submit_job(object remote_qpu, str qasm_string, int nshots):             # <<<<<<<<<<<<<<
  *     """
  *      The function submits a quantum circuit to a remote QPU and collects the results.
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10simulators_6eviden_7qaptiva_5submit_job, 0, __pyx_mstate_global->__pyx_n_u_submit_job, NULL, __pyx_mstate_global->__pyx_n_u_simulators_eviden_qaptiva, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[2])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 107, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7qaptiva_5submit_job, 0, __pyx_mstate_global->__pyx_n_u_submit_job, NULL, __pyx_mstate_global->__pyx_n_u_qaptiva, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[2])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 107, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_submit_job, __pyx_t_2) < (0)) __PYX_ERR(0, 107, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "simulators/eviden/qaptiva.pyx":1
+  /* "qaptiva.pyx":1
  * from libc.stdlib cimport malloc, free             # <<<<<<<<<<<<<<
  * 
  * from libc.math cimport isnan
@@ -5307,7 +5344,7 @@ __Pyx_RefNannySetupContext("PyInit_qaptiva", 0);
   __Pyx_XDECREF(__pyx_t_2);
   if (__pyx_m) {
     if (__pyx_mstate->__pyx_d && stringtab_initialized) {
-      __Pyx_AddTraceback("init simulators.eviden.qaptiva", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init qaptiva", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     #if !CYTHON_USE_MODULE_STATE
     Py_CLEAR(__pyx_m);
@@ -5321,7 +5358,7 @@ __Pyx_RefNannySetupContext("PyInit_qaptiva", 0);
     }
     #endif
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init simulators.eviden.qaptiva");
+    PyErr_SetString(PyExc_ImportError, "init qaptiva");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
@@ -5397,6 +5434,7 @@ static const __Pyx_StringTabEntry __pyx_string_tab[] = {
   {__pyx_k_post, sizeof(__pyx_k_post), 0, 1, 1}, /* PyObject cname: __pyx_n_u_post */
   {__pyx_k_print, sizeof(__pyx_k_print), 0, 1, 1}, /* PyObject cname: __pyx_n_u_print */
   {__pyx_k_probability, sizeof(__pyx_k_probability), 0, 1, 1}, /* PyObject cname: __pyx_n_u_probability */
+  {__pyx_k_qaptiva, sizeof(__pyx_k_qaptiva), 0, 1, 1}, /* PyObject cname: __pyx_n_u_qaptiva */
   {__pyx_k_qaptiva_pyx, sizeof(__pyx_k_qaptiva_pyx), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_qaptiva_pyx */
   {__pyx_k_qasm_string, sizeof(__pyx_k_qasm_string), 0, 1, 1}, /* PyObject cname: __pyx_n_u_qasm_string */
   {__pyx_k_qat_core_qpu, sizeof(__pyx_k_qat_core_qpu), 0, 1, 1}, /* PyObject cname: __pyx_n_u_qat_core_qpu */
@@ -5406,7 +5444,6 @@ static const __Pyx_StringTabEntry __pyx_string_tab[] = {
   {__pyx_k_requests, sizeof(__pyx_k_requests), 0, 1, 1}, /* PyObject cname: __pyx_n_u_requests */
   {__pyx_k_result, sizeof(__pyx_k_result), 0, 1, 1}, /* PyObject cname: __pyx_n_u_result */
   {__pyx_k_set_name, sizeof(__pyx_k_set_name), 0, 1, 1}, /* PyObject cname: __pyx_n_u_set_name */
-  {__pyx_k_simulators_eviden_qaptiva, sizeof(__pyx_k_simulators_eviden_qaptiva), 0, 1, 1}, /* PyObject cname: __pyx_n_u_simulators_eviden_qaptiva */
   {__pyx_k_spec, sizeof(__pyx_k_spec), 0, 1, 1}, /* PyObject cname: __pyx_n_u_spec */
   {__pyx_k_state, sizeof(__pyx_k_state), 0, 1, 1}, /* PyObject cname: __pyx_n_u_state */
   {__pyx_k_state_probabilities, sizeof(__pyx_k_state_probabilities), 0, 1, 1}, /* PyObject cname: __pyx_n_u_state_probabilities */
@@ -5443,7 +5480,7 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
   CYTHON_UNUSED_VAR(__pyx_mstate);
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "simulators/eviden/qaptiva.pyx":47
+  /* "qaptiva.pyx":47
  *     return x <= 0 or isnan(x)
  * 
  * cpdef object submit_noisy_job(str host, str qasm_string, int nshots, double t1=40000, double t2=22000):             # <<<<<<<<<<<<<<
